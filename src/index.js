@@ -119,7 +119,7 @@ class Game extends React.Component {
 }
 
 function calculateWinner(squares) {
-  const lines = [
+  const winningLines = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -130,7 +130,7 @@ function calculateWinner(squares) {
     [2,4,6],
   ];
   let winner;
-  lines.map(line => {
+  winningLines.map(line => {
     const [a,b,c] = line;
     if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
       winner = squares[a];
