@@ -13,7 +13,8 @@ export const calculateWinner = (squares) => {
     winningLines.map(line => {
         const [a,b,c] = line;
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
-        winner = squares[a];
+            winner = squares[a];
+        return line;
     });
     return winner? winner: null;
 }
