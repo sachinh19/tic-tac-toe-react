@@ -1,4 +1,6 @@
-This repository contains code for the React - Getting Started - Tutorial.
+This repository contains code for the Intro to React - Getting Started - Tutorial.
+
+[Link To The Tutorial](https://reactjs.org/tutorial/tutorial.html)
 
 ## Contents
 
