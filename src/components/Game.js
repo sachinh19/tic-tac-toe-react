@@ -14,7 +14,8 @@ export default class Game extends React.Component {
         }
       ],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      order: false
     };
   }
 
@@ -71,6 +72,12 @@ export default class Game extends React.Component {
       );
     });
 
+    let toggleButtonText = "Stack";
+    if (this.state.order) {
+      moves.reverse();
+      toggleButtonText = "Queue";
+    }
+
     let status;
     if (moves.length == 10 && !winner) {
       status = "Result : Draw";
@@ -91,7 +98,13 @@ export default class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <br />
+          <div>
+            <button onClick={() => this.setState({ order: !this.state.order })}>
+              Toggle history to a {toggleButtonText}
+            </button>
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );
