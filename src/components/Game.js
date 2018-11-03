@@ -79,7 +79,7 @@ export default class Game extends React.Component {
     }
 
     let status;
-    if (moves.length == 10 && !winner) {
+    if (moves.length === 10 && !winner) {
       status = "Result : Draw";
     } else if (winner) {
       status = "Winner : " + winner;
