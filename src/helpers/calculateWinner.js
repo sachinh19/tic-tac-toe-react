@@ -9,12 +9,15 @@ export const calculateWinner = squares => {
     [0, 4, 8],
     [2, 4, 6]
   ];
-  let winner;
+  let winner, winningLine;
   winningLines.map(line => {
     const [a, b, c] = line;
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       winner = squares[a];
+      winningLine = line;
+    }
     return line;
   });
-  return winner ? winner : null;
+
+  return winner ? { winner, winningLine } : null;
 };

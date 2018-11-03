@@ -8,6 +8,8 @@ export default class Board extends React.Component {
         value={this.props.squares[i]}
         key={i}
         onClick={() => this.props.onClick(i)}
+        line={this.props.winningLine}
+        index={i}
       />
     );
   }

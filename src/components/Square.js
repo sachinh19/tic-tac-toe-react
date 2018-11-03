@@ -1,7 +1,12 @@
 import React from "react";
 
-export const Square = props => (
-  <button className="square" onClick={() => props.onClick()}>
-    {props.value}
-  </button>
-);
+export const Square = props => {
+  const { line, value, onClick, index } = props;
+  const classes = line && line.includes(index) ? "square-winner" : "square";
+
+  return (
+    <button className={classes} onClick={() => onClick()}>
+      {value}
+    </button>
+  );
+};

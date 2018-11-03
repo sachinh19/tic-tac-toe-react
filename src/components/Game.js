@@ -51,7 +51,11 @@ export default class Game extends React.Component {
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
+    const result = calculateWinner(current.squares);
+    const { winner, winningLine } = result
+      ? result
+      : { winner: null, winningLine: null };
+
     const moves = history.map((step, move) => {
       const desc = move ? "Go to move #" + move : "Go to game start";
       let moveCoord =
@@ -79,7 +83,11 @@ export default class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          <Board
+            squares={current.squares}
+            onClick={i => this.handleClick(i)}
+            winningLine={winningLine}
+          />
         </div>
         <div className="game-info">
           <div>{status}</div>
