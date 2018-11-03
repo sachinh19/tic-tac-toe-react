@@ -60,7 +60,7 @@ export default class Game extends React.Component {
           : "";
       return (
         <li key={move}>
-          <button onClick={() => this.jumpToMove(move)}>
+          <button onClick={() => this.jumpToMove(move)} className="active">
             {desc + moveCoord}
           </button>
         </li>
