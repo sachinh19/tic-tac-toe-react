@@ -72,10 +72,10 @@ export default class Game extends React.Component {
       );
     });
 
-    let toggleButtonText = "Stack";
+    let toggleButtonText = "most";
     if (this.state.order) {
       moves.reverse();
-      toggleButtonText = "Queue";
+      toggleButtonText = "least";
     }
 
     let status;
@@ -101,7 +101,7 @@ export default class Game extends React.Component {
           <br />
           <div>
             <button onClick={() => this.setState({ order: !this.state.order })}>
-              Toggle history to a {toggleButtonText}
+              Order by {toggleButtonText} recent move
             </button>
             <ol>{moves}</ol>
           </div>
